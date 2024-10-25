@@ -1,0 +1,161 @@
+:root {
+    --color-1: #3873A6;
+    --color-2: #025373;
+    --color-3: #60A4BF;
+    --color-4: #F2D399;
+    --color-5: #F2921D;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url("../fonts/Kanit/Kanit-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit";
+}
+
+body {
+    user-select: none;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 96%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 0;
+    width: 100vw;
+    backdrop-filter: blur(200px);
+    color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header div.logo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+header .logo img {
+    width: 96px;
+    height: 52px;
+}
+
+header nav.desktop {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+header nav.desktop a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+header nav.desktop a::before {
+    content: "";
+    width: 0;
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    top: 100%;
+    transition: width 0.3s ease;
+}
+
+header nav.desktop a:hover::before {
+    width: 100%;
+}
+
+/* Styling 1st section */
+
+section.hero {
+    min-height: 100vh;
+    background-image: url('../assets/images/auckland-img.jpg');
+    background-size: cover;
+}
+
+/* section.hero #auckland-front {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#auckland-front img {
+    width: 100%;
+    height: 100vh;
+} */
+
+section.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+section.hero .content {
+    display: flex;
+    gap: 4rem;
+    position: relative;
+}
+
+section.hero .content::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--color-2);
+    border-radius: 50%;
+    box-shadow: 0 0 200px 200px var(--color-2);
+    opacity: 0.3;
+}
+
+section.hero .text {
+    width: 60%;
+    color: white;
+    position: relative;
+    z-index: 999;
+    font-size: 1.2rem;
+}
+
+section.hero .text h1 {
+    font-size: 6rem;
+    color: white;
+    font-weight: bold;
+    line-height: 5rem;
+    margin-bottom: 2rem;
+}
+
+section.hero .content h1 > span,
+header .logo h1 > span {
+    color: var(--color-4);
+}
+
+section.hero .content .flag {
+    width: 40%;
+    max-height: 300px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    z-index: 9999;
+}
+
+section.hero .content .flag img {
+    width: 100%;
+    height: 100%;
+}
