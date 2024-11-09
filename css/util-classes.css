@@ -1,0 +1,47 @@
+:root {
+    --color-1: #3873A6;
+    --color-2: #025373;
+    --color-3: #60A4BF;
+    --color-4: #F2D399;
+    --color-5: #F2921D;
+}
+
+.b-color-1 {
+    background-color: var(--color-1);
+}
+
+.b-color-2 {
+    background-color: var(--color-2);
+}
+
+.b-color-3 {
+    background-color: var(--color-3);
+}
+
+.b-color-4 {
+    background-color: var(--color-4);
+}
+
+.b-color-5 {
+    background-color: var(--color-5);
+}
+
+.color-1 {
+    color: var(--color-1);
+}
+
+.color-2 {
+    color: var(--color-2);
+}
+
+.color-3 {
+    color: var(--color-3);
+}
+
+.color-4 {
+    color: var(--color-4);
+}
+
+.color-5 {
+    color: var(--color-5);
+}

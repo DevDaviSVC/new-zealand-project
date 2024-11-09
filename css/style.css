@@ -1,11 +1,3 @@
-:root {
-    --color-1: #3873A6;
-    --color-2: #025373;
-    --color-3: #60A4BF;
-    --color-4: #F2D399;
-    --color-5: #F2921D;
-}
-
 @font-face {
     font-family: "Kanit";
     src: url("../fonts/Kanit/Kanit-Regular.ttf");
@@ -16,6 +8,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Kanit";
+}
+
+.blurElement {
+    transform: scale(1.01);
 }
 
 body {
@@ -36,6 +32,7 @@ header {
     width: 100vw;
     backdrop-filter: blur(200px);
     color: white;
+    z-index: 999999;
 }
 
 header .container {
@@ -80,10 +77,13 @@ header nav.desktop a:hover::before {
     width: 100%;
 }
 
+section {
+    min-height: 100vh;
+}
+
 /* Styling 1st section */
 
 section.hero {
-    min-height: 100vh;
     background-image: url('../assets/images/auckland-img.jpg');
     background-size: cover;
 }
@@ -158,4 +158,124 @@ section.hero .content .flag {
 section.hero .content .flag img {
     width: 100%;
     height: 100%;
+}
+
+/* Styling history section */
+
+section.history {
+    padding: 8rem 0;
+    position: relative;
+    background-image: linear-gradient(var(--color-2), var(--color-1));
+}
+
+section.history::before {
+    height: 150px;
+    content: "";
+    background-image: linear-gradient(transparent, var(--color-2));
+    position: absolute;
+    top: -150px;
+    width: 100%;
+    left: 0;
+}
+
+.sectionHeader {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+}
+
+.content-row {
+    color: white;
+    padding: 4rem 0;
+}
+
+.content-row h1 {
+    font-size: 3.5rem;
+    color: var(--color-4);
+}
+
+.content-row .contentFlex {
+    display: flex;
+    gap: 4rem;
+}
+
+.cardRow {
+    display: flex;
+    gap: 2rem;
+}
+
+.cardSingle {
+    min-width: 500px;
+    width: 50%;
+    min-height: 300px;
+    background-size: 100%;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.cardSingle::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease-in-out;
+}
+
+.cardSingle:hover {
+    background-size: 105%;
+}
+
+.cardSingle:hover::after {
+    backdrop-filter: blur(10px);
+}
+
+.cardSingle .content {
+    position: absolute;
+    bottom: -100px;
+    transition: bottom 0.3s ease-in-out;
+    color: var(--color-4);
+    z-index: 2;
+}
+
+.cardSingle:hover .content {
+    bottom: 0;
+}
+
+/* WW2 section */
+
+.ww2 {
+    min-height: 100vh;
+    background-image: url('../assets/images/new-zealand-ww2.jpg');
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: var(--color-1);
+    background-size: cover;
+    position: relative;
+}
+
+.ww2::before {
+    content: "";
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    z-index: 200;
+    background-image: linear-gradient(transparent, var(--color-1));
+    top: -150px;
+}
+
+.ww2::after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    z-index: 200;
+    background-image: linear-gradient(var(--color-1), transparent);
+    top: 0px;
 }
