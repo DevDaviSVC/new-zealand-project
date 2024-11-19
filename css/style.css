@@ -10,12 +10,18 @@
     font-family: "Kanit";
 }
 
-.blurElement {
-    transform: scale(1.01);
-}
-
 body {
     user-select: none;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--color-2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-1);
 }
 
 .container {
@@ -189,6 +195,8 @@ section.history::before {
 .content-row {
     color: white;
     padding: 4rem 0;
+    position: relative;
+    z-index: 999;
 }
 
 .content-row h1 {
@@ -207,8 +215,8 @@ section.history::before {
 }
 
 .cardSingle {
-    min-width: 500px;
-    width: 50%;
+    max-width: 500px;
+    width: 100%;
     min-height: 300px;
     background-size: 100%;
     border-radius: 1rem;
@@ -284,4 +292,66 @@ section.history::before {
     z-index: 10;
     background-image: linear-gradient(var(--color-1), transparent);
     top: 0px;
+}
+
+/* Styling footer */
+
+footer {
+    padding: 7rem 0;
+    background-color: var(--color-6);
+    color: white;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    z-index: 200;
+    background-image: linear-gradient(transparent, var(--color-6));
+    top: -150px;
+}
+
+footer > .container > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socialRow {
+    display: flex;
+    gap: 2rem;
+}
+
+.socialBtn {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    font-size: 1.5rem;
+    color: var(--color-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.flexReverse {
+    flex-direction: row-reverse;
+}
+
+.socialBtn:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1000px) {
+    .contentFlex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
