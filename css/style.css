@@ -36,7 +36,7 @@ header {
     left: 0;
     padding: 2rem 0;
     width: 100vw;
-    backdrop-filter: blur(200px);
+    backdrop-filter: blur(20px);
     color: white;
     z-index: 999999;
 }
@@ -87,25 +87,12 @@ section {
     min-height: 100vh;
 }
 
-/* Styling 1st section */
+/* Styling hero section */
 
 section.hero {
     background-image: url('../assets/images/auckland-img.jpg');
     background-size: cover;
 }
-
-/* section.hero #auckland-front {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#auckland-front img {
-    width: 100%;
-    height: 100vh;
-} */
 
 section.hero .container {
     display: flex;
@@ -116,9 +103,11 @@ section.hero .container {
 }
 
 section.hero .content {
+    width: 100%;
     display: flex;
-    gap: 4rem;
+    justify-content: space-between;
     position: relative;
+    align-items: center;
 }
 
 section.hero .content::before {
@@ -145,7 +134,7 @@ section.hero .text h1 {
     color: white;
     font-weight: bold;
     line-height: 5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 section.hero .content h1 > span,
@@ -154,7 +143,7 @@ header .logo h1 > span {
 }
 
 section.hero .content .flag {
-    width: 40%;
+    width: 60%;
     max-height: 300px;
     aspect-ratio: 16 / 9;
     position: relative;
@@ -163,23 +152,23 @@ section.hero .content .flag {
 
 section.hero .content .flag img {
     width: 100%;
-    height: 100%;
+    border-radius: 1rem;
 }
 
-/* Styling history section */
+/* Styling about section */
 
-section.history {
+section.about {
     padding: 8rem 0;
     position: relative;
     background-image: linear-gradient(var(--color-2), var(--color-1));
 }
 
-section.history::before {
+section.about::before {
     height: 150px;
     content: "";
     background-image: linear-gradient(transparent, var(--color-2));
     position: absolute;
-    top: -150px;
+    top: -149px;
     width: 100%;
     left: 0;
 }
@@ -216,19 +205,20 @@ section.history::before {
 
 .cardSingle {
     max-width: 500px;
+    min-width: 40%;
     width: 100%;
     min-height: 300px;
-    background-size: 100%;
+    background-size: cover;
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
     padding: 2rem;
-    transition: background-size 0.3s ease-in-out;
+    background-position: center;
 }
 
 .cardSingle::after {
     content: "";
-    width: 100%;
+    width: calc(100% + 2px);
     height: 100%;
     position: absolute;
     top: 0;
@@ -238,19 +228,16 @@ section.history::before {
     transition: backdrop-filter 0.3s ease-in-out;
 }
 
-.cardSingle:hover {
-    background-size: 105%;
-}
-
 .cardSingle:hover::after {
     backdrop-filter: blur(10px);
 }
 
 .cardSingle .content {
     position: absolute;
-    bottom: -100px;
+    bottom: -90%;
     transition: bottom 0.3s ease-in-out;
     color: var(--color-4);
+    width: 80%;
     z-index: 2;
 }
 
@@ -258,33 +245,34 @@ section.history::before {
     bottom: 0;
 }
 
-/* WW2 section */
+/* Styling Learn More section */
 
-.ww2 {
-    min-height: 100vh;
-    background-image: url('../assets/images/new-zealand-ww2.jpg');
-    background-position: center;
-    background-blend-mode: multiply;
-    background-color: var(--color-1);
+section.learnMore {
+    background-image: url("../assets/images/new-zealand-nowadays.jpg");
     background-size: cover;
-    position: relative;
+    background-position: center;
+    background-color: var(--color-1);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
-.ww2::before {
+section.learnMore::before {
     content: "";
     width: 100%;
     height: 150px;
     position: absolute;
     z-index: 200;
     background-image: linear-gradient(transparent, var(--color-1));
-    top: -150px;
+    top: -149px;
 }
 
-.ww2::after {
+section.learnMore::after {
     content: "";
     width: 100%;
     height: 300px;
@@ -294,11 +282,52 @@ section.history::before {
     top: 0px;
 }
 
+section.learnMore .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+}
+
+.optionsRow {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.optionCardSingle {
+    display: inline-block;
+    padding-left: -5px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.optionCardSingle .img {
+    display: block;
+    width: 240px;
+    height: 240px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.optionCardSingle .img:hover {
+    transform: scale(1.1);
+}
+
+.optionCardSingle p {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: white;
+}
+
 /* Styling footer */
 
 footer {
     padding: 7rem 0;
-    background-color: var(--color-6);
+    background-color: var(--color-1);
     color: white;
     position: relative;
 }
@@ -309,8 +338,8 @@ footer::before {
     height: 150px;
     position: absolute;
     z-index: 200;
-    background-image: linear-gradient(transparent, var(--color-6));
-    top: -150px;
+    background-image: linear-gradient(transparent, var(--color-1));
+    top: -149px;
 }
 
 footer > .container > div {
@@ -336,7 +365,7 @@ footer > .container > div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     transform: scale(1);
 }
 
@@ -346,6 +375,18 @@ footer > .container > div {
 
 .socialBtn:hover {
     transform: scale(1.2);
+    box-shadow: 0 0 12px -2px white;
+}
+
+@media screen and (max-width: 1100px) {
+    section.hero .content {
+        flex-direction: column-reverse;
+        gap: 4rem;
+    }
+
+    section.hero .text {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -353,5 +394,27 @@ footer > .container > div {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .content-row {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    section.hero .text h1 {
+        line-height: 4rem;
+        font-size: 4rem;
+    }
+    
+    .sectionHeader {
+        font-size: 3.7rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    section.hero .text h1 {
+        line-height: 3rem;
+        font-size: 3rem;
     }
 }

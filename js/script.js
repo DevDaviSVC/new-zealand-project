@@ -17,8 +17,14 @@ window.onload = () => {
     
             element.style.filter = `blur(${blurValue}px)`;
             // element.style.transform = `scale(1.0${Math.floor(blurValue / 2)})`;
+
+            backgroundParallaxEffect(document.querySelector("section.hero"), window.scrollY, 0.5);
         }
     });
+
+    function backgroundParallaxEffect (element, windowScrollY, value) {
+        element.style.backgroundPosition = `0 ${windowScrollY * value}px`;
+    }
 
     let slideRight = {
         distance: "50%",
