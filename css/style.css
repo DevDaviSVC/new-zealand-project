@@ -38,7 +38,7 @@ header {
     width: 100vw;
     backdrop-filter: blur(20px);
     color: white;
-    z-index: 999999;
+    z-index: 99999;
 }
 
 header .container {
@@ -52,9 +52,55 @@ header div.logo {
     align-items: center;
 }
 
-header .logo img {
-    width: 96px;
-    height: 52px;
+nav.mobile {
+    display: none;
+}
+
+nav.mobile .mobileMenu {
+    position: absolute;
+    right: -60%;
+    top: 0;
+    width: 60%;
+    background-color: var(--color-2);
+    height: 100vh;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+}
+
+nav.mobile .mobileMenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav.mobile .mobileMenu li {
+    padding: 1rem 0;
+}
+
+nav.mobile .mobileMenu li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+nav.mobile .mobileMenu li a::before {
+    content: "";
+    width: 0;
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    top: 100%;
+    transition: width 0.3s ease;
+}
+
+nav.mobile .mobileMenu li a:hover::before {
+    width: 100%;
+}
+
+#toggleMenuIcon {
+    display: none;
+    position: relative;
+    font-size: 2rem;
+    z-index: 999;
 }
 
 header nav.desktop {
@@ -85,6 +131,10 @@ header nav.desktop a:hover::before {
 
 section {
     min-height: 100vh;
+}
+
+div.main {
+    transition: filter 0.3s ease-in-out;
 }
 
 /* Styling hero section */
@@ -399,6 +449,10 @@ footer > .container > div {
         justify-content: center;
     }
 
+    section.hero .text {
+        width: 100%;
+    }
+
     .content-row {
         text-align: center;
     }
@@ -412,6 +466,18 @@ footer > .container > div {
     
     .sectionHeader {
         font-size: 3.7rem;
+    }
+
+    header nav.desktop {
+        display: none;
+    }
+
+    header nav.mobile {
+        display: block;
+    }
+
+    #toggleMenuIcon {
+        display: block;
     }
 }
 
