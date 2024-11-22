@@ -311,6 +311,9 @@ section.learnMore .content {
     background-color: #ccc;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 .optionCardSingle .img:hover {
